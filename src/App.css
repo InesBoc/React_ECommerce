@@ -1,0 +1,81 @@
+body { 
+  
+    background-image: url('./img/mLogo_transp.jpeg');
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 30px;
+    font-family:Arial,sans-serif; 
+
+    
+}
+nav {
+  background-color: #00322f;
+  display: flex;
+  list-style: none;
+  padding: 0%;
+  margin: 0%;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  padding: 20px;
+  justify-content: center;
+}
+li  {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace;
+  color: rgb(234, 234, 181);
+  text-decoration: none;
+  padding: 2px;
+  gap: 2px;
+  display: inline-block;
+  font-style: italic;
+  font-size: 20px;
+  cursor: pointer;
+  
+}
+nav li a {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace;
+  color: rgb(234, 234, 181);
+    text-decoration: none;
+    font-weight: bold;
+}
+h1  { 
+        font-family: "Shrikhand", serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align:center; 
+        text-shadow: #fceff6 0px 0px 10px;
+        color:#ed6bae; 
+        font-size:6rem; 
+        margin:0 0 0 30px; 
+}
+.item-list-container  { 
+        font-family: "Shrikhand", serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align:center; 
+        color:#ed6bae; 
+        font-size:4rem; 
+        margin:30px 0; 
+}
+.cart-witget {
+  position: relative;
+  display: inline-block;
+}
+.cart-icon {
+  font-size: 30px;
+}
+.cart-bubble {
+  position: absolute;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
