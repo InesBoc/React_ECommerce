@@ -1,8 +1,23 @@
+import { useState, useEffect } from "react"
+import ItemList from "./ItemList"
+import { useParams } from "react-router"
+
+
 function ItemListContainer({text}) {
+  const [items, setItems] = useState([])
+  const {id}= useParams()
+
+useEffect(() => {
+  const url= 'https://dummyjson.com/products'
+  const urlCategory= `https://dummyjson.com/products/category/${id}`
+  fetch(id ? urlCategory : url)
+    .then(res => res.json())
+    .then(data => setItems (data.products) )
+
+  }, [id])
+ 
   return (
-      <div className="item-list-container">
-      {text}
-    </div>
-     );
+      <ItemList items={items} />
+     )
 }
-export default ItemListContainer;
+export default ItemListContainer

@@ -11,7 +11,7 @@ body {
 
     
 }
-nav {
+.bg-body-tertiary {
   background-color: #00322f;
   display: flex;
   list-style: none;

@@ -1,15 +1,39 @@
-import CartWidget from "./CartWidget";
-function NavBar () {
+
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import CartWidget from "./CartWidget"
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import { NavLink, Link } from 'react-router-dom'
+
+
+function NavBar ({categories}) {
   return (
-    <nav className="navbar">
-      <h1>MAI Cosmetics</h1>
-      <ul className="nav-links">
-        <li><a href="#">Maquillaje</a></li>
-        <li><a href="#">Accesorios</a></li>
-        <li><a href="#">Promociones</a></li>
-      </ul>
-     < CartWidget/>
-    </nav>
-  );
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          MAI Cosmetics
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Categorías" id="basic-nav-dropdown" >
+               {categories.map( (category  => (
+                <NavDropdown.Item 
+                as={NavLink} 
+                to={`/category/${category}`} 
+                key={category}
+                >
+                  {category}
+            </NavDropdown.Item>
+                )))}
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      < CartWidget/>
+      </Container>  
+    </Navbar>
+  )
 }
-export default NavBar;
+
+export default NavBar 
