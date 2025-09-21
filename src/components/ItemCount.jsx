@@ -10,7 +10,10 @@ function Counter() {
             <p>{count}</p>
             <Button onClick={handleAdd} style={{ backgroundColor: "#00322f", borderColor: "#00322f" }}>+</Button>
             <Button onClick={handleSub} style={{ backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px" }}>-</Button>
-            <Button style={{ backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px" }}> Agregar al carrito</Button>
+            <Button style={{ backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px",fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
+                    color: "rgb(234, 234, 181)",
+                    fontStyle: "italic",
+                    fontSize: "20px", }}> Agregar al carrito</Button>
         </div>
     )
 }

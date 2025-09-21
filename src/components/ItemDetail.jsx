@@ -10,11 +10,19 @@ function ItemDetail({item}) {
   return (
     <Container className="mt-4">
     <Row>
-        <Col>
+        <Col >
         <Image src= {item?.thumbnail}/>
         </Col>
 
-        <Col>
+        <Col style={{
+                    backgroundColor: "#00322f" ,
+                    fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
+                    color: "rgb(234, 234, 181)",
+                    fontStyle: "italic",
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    cursor: "pointer"
+                  }}>
         <h2>{item?.title}</h2>
         <p>$ {item?.price}</p>
         <p>{item?.description}</p>
