@@ -11,18 +11,52 @@ function NavBar ({categories}) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/"style={{
+            fontFamily: "Shrikhand, serif",
+            fontWeight: 400,
+            fontStyle: "normal",
+            textAlign: "center",
+            textShadow: "#fceff6 0px 0px 10px",
+            color: "#ed6bae",
+            fontSize: "4rem",
+            margin: "0 0 0 30px"
+          }}>
           MAI Cosmetics
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Categorías" id="basic-nav-dropdown" >
+            <NavDropdown title={
+              <span style={{
+                          fontFamily: "Shrikhand, serif",
+                          fontWeight: 400,
+                          fontStyle: "normal",
+                          textAlign: "center", 
+                          color: "#b2246dff", 
+                          fontSize: "2rem", 
+                          margin: "0 0 0 30px"
+                          }}>
+                              Categorías
+                </span>
+                    }
+            >
+            
                {categories.map( (category  => (
                 <NavDropdown.Item 
                 as={NavLink} 
                 to={`/category/${category}`} 
                 key={category}
+                   style={{
+                    backgroundColor: "#00322f" ,
+                    fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
+                    color: "rgb(234, 234, 181)",
+                    fontStyle: "italic",
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    cursor: "pointer"
+                  }}
+              
+                
                 >
                   {category}
             </NavDropdown.Item>

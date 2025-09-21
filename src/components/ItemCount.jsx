@@ -8,9 +8,9 @@ function Counter() {
     return (
         <div>
             <p>{count}</p>
-            <Button onClick={handleAdd} variant='success'>+</Button>
-            <Button onClick={handleSub} variant= 'danger'>-</Button>
-            <Button variant= 'primary'> Agregar al carrito</Button>
+            <Button onClick={handleAdd} style={{ backgroundColor: "#00322f", borderColor: "#00322f" }}>+</Button>
+            <Button onClick={handleSub} style={{ backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px" }}>-</Button>
+            <Button style={{ backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px" }}> Agregar al carrito</Button>
         </div>
     )
 }

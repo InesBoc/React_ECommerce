@@ -14,7 +14,7 @@ function Item({item}) {
         <Card.Text>
           {item.category}
         </Card.Text>
-        <Button onClick={() => navigate(`/item/${item.id}`)}>
+       <Button onClick={() => navigate(`/item/${item.id}`)} style={{ backgroundColor: "#00322f", borderColor: "#00322f" }}>
           Ver más
           </Button>
       </Card.Body>
