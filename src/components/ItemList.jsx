@@ -4,11 +4,11 @@ import Item from "./Item"
 
 function ItemList({items}) {
     return (
-    <Container className="mt-5" >
-        <Row>
-      {items.map(item => <Item item={item} key= {item.id} />)}
-       </Row>
-    </Container>
+        <Container className="mt-5" >
+            <Row>
+            {items.map(item => <Item item={item} key= {item.id} />)}
+            </Row>
+        </Container>
     )
 }
 export default ItemList;

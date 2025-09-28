@@ -36,17 +36,16 @@ function NavBar ({categories}) {
                           fontSize: "2rem", 
                           margin: "0 0 0 30px"
                           }}>
-                              Categorías
-                </span>
-                    }
-            >
+               Categorías
+              </span>
+              }>
             
-               {categories.map( (category  => (
+            {categories.map( (category  => (
                 <NavDropdown.Item 
-                as={NavLink} 
-                to={`/category/${category}`} 
-                key={category}
-                   style={{
+                  as={NavLink} 
+                  to={`/category/${category}`} 
+                  key={category}
+                  style={{
                     backgroundColor: "#00322f" ,
                     fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
                     color: "rgb(234, 234, 181)",
@@ -54,17 +53,14 @@ function NavBar ({categories}) {
                     fontSize: "20px",
                     fontWeight: "bold",
                     cursor: "pointer"
-                  }}
-              
-                
-                >
+                  }}>
                   {category}
-            </NavDropdown.Item>
+                </NavDropdown.Item>
                 )))}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-      < CartWidget/>
+      <CartWidget/>
       </Container>  
     </Navbar>
   )

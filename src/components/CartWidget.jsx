@@ -1,23 +1,18 @@
-
+import { Badge } from "react-bootstrap"
+import {Button} from "react-bootstrap"
+import {useContext} from "react"
+import { CartContext } from "../context/CartContext"
+import { useNavigate } from "react-router"
 
 function CartWidget() {
+  const {getQuantity} = useContext(CartContext)
+  const quantity = getQuantity()
+  const navigate= useNavigate ()
+
   return (
-    <div className="cart-widget">
-      <span className="cart-icon" role="img" aria-label="Carrito de compras" 
-      style= {{fontSize: "30px"}}
-      >🛒</span>
-      <span className="cart-bubble" 
-      style= {{
-  position: "absolute",
-  backgroundColor: "red",
-  color: "white",
-  fontSize: "12px",
-  fontWeight: "bold",
-  borderRadius: "50%",
-  padding: "2px 6px",
-}}
->3</span>
-    </div>
+        <Button variant= "dark" onClick={() => navigate ("/cart")} >
+        🛒 <Badge bg="secondary">{quantity} </Badge>
+        </Button>
     
   );
 }

@@ -8,10 +8,10 @@ import ItemCount from "./ItemCount"
 
 function ItemDetail({item}) {
   return (
-    <Container className="mt-4">
+  <Container className="mt-4">
     <Row>
         <Col >
-        <Image src= {item?.thumbnail}/>
+          <Image src= {item?.thumbnail}/>
         </Col>
 
         <Col style={{
@@ -23,11 +23,12 @@ function ItemDetail({item}) {
                     fontWeight: "bold",
                     cursor: "pointer"
                   }}>
-        <h2>{item?.title}</h2>
-        <p>$ {item?.price}</p>
-        <p>{item?.description}</p>
+          <h2>{item?.title}</h2>
+          <p>$ {item?.price}</p>
+          <p>{item?.description}</p>
+        
         </Col>
-        <ItemCount/>
+        <ItemCount item={item}/>
     </Row>
    </Container>
   )
