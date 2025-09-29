@@ -11,7 +11,7 @@ function ItemDetail({item}) {
   <Container className="mt-4">
     <Row>
         <Col >
-          <Image src= {item?.thumbnail}/>
+          <Image src= {item?.image} style={ {height:400} }/>
         </Col>
 
         <Col style={{
@@ -23,7 +23,7 @@ function ItemDetail({item}) {
                     fontWeight: "bold",
                     cursor: "pointer"
                   }}>
-          <h2>{item?.title}</h2>
+          <h2>{item?.name}</h2>
           <p>$ {item?.price}</p>
           <p>{item?.description}</p>
         

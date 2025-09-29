@@ -8,9 +8,9 @@ function Item({item}) {
     return (
     <Col lg= {3} className="mb-4 ">
       <Card>
-        <Card.Img variant="top" src={item.thumbnail} />
+        <Card.Img variant="top" src={item.image} style={{height:300}} />
         <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
+        <Card.Title>{item.name}</Card.Title>
         <Card.Text>
            {item.category}
         </Card.Text>

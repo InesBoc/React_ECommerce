@@ -43,8 +43,8 @@ function NavBar ({categories}) {
             {categories.map( (category  => (
                 <NavDropdown.Item 
                   as={NavLink} 
-                  to={`/category/${category}`} 
-                  key={category}
+                  to={`/category/${category.categoryName}`} 
+                  key={category.id}
                   style={{
                     backgroundColor: "#00322f" ,
                     fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
@@ -54,7 +54,7 @@ function NavBar ({categories}) {
                     fontWeight: "bold",
                     cursor: "pointer"
                   }}>
-                  {category}
+                  {category.categoryName}
                 </NavDropdown.Item>
                 )))}
             </NavDropdown>

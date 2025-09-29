@@ -1,22 +1,24 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 import { useParams } from "react-router"
-import { CartContext } from "../context/CartContext"
+import { getItems, getItemsByCategory } from "../firebase/db"
+
 
 
 function ItemListContainer({text}) {
   const [items, setItems] = useState([])
   const {id}= useParams()
-  const context= useContext(CartContext)
+
 
   useEffect(() => {
-    console.log(context)
-    const url= 'https://dummyjson.com/products'
-    const urlCategory= `https://dummyjson.com/products/category/${id}`
-    fetch(id ? urlCategory : url)
-    .then(res => res.json())
-    .then(data => setItems (data.products) )
-
+    if (id) { 
+      getItemsByCategory(id)
+      .then (data => setItems (data) )
+    } else {
+      getItems()
+      .then (data =>setItems (data))
+    }
+ 
   }, [id])
  
   return (
@@ -24,3 +26,5 @@ function ItemListContainer({text}) {
      )
 }
 export default ItemListContainer
+
+
