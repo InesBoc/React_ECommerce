@@ -9,6 +9,7 @@ import {
     addDoc } 
     from "firebase/firestore"
 import { app } from "./config"
+import toast from 'react-hot-toast'
 
 
 const db = getFirestore(app)
@@ -61,7 +62,15 @@ if (docSnap.exists()) {
 }
 }
 
-export const createOrder= async (order) => {
-const docRef = await addDoc(collection(db, "orders"), {order})
-console.log("Document written with ID: ", docRef.id)
+export const createOrder= async (orden) => {
+  try {
+    const docRef = await addDoc(collection(db, "orders"), orden)
+    toast.success(`Gracias por tu compra, el ID de tu orden es: ${docRef.id}`)
+    return true
+  } catch (error) {
+    toast.error(`Hubo un error: ${error.code}`)
+    return false
+  }   
+  
+
 }

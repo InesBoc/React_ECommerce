@@ -6,14 +6,14 @@ import { useNavigate } from "react-router"
 
 function CartWidget() {
   const {getQuantity} = useContext(CartContext)
-  const quantity = getQuantity()
+  const quantities = getQuantity()
   const navigate= useNavigate ()
 
   return (
         <Button variant= "dark" onClick={() => navigate ("/cart")} >
-        🛒 <Badge bg="secondary">{quantity} </Badge>
+        🛒 <Badge bg="secondary">{quantities} </Badge>
         </Button>
     
-  );
+  )
 }
-export default CartWidget;
+export default CartWidget

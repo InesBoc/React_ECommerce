@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { useNavigate } from "react-router"
 
 function CartContainer(params) {
-    const {cart, getTotal}= useContext(CartContext)
+    const {cart, getTotal, deleteItem}= useContext(CartContext)
     const total= getTotal()
     const navigate= useNavigate()
 
@@ -14,8 +14,9 @@ function CartContainer(params) {
             <ListGroup className="w-50">
    
                 {cart.map(item =>
-                    (<ListGroup.Item key={item.id}>
+                    (<ListGroup.Item key={item.id} className="d-flex justify-content-between">
                        {item.count} x {item.name} 
+                       <Button variant='danger' onClick={() => deleteItem(item.id)}> X </Button>
                     </ListGroup.Item>)
                 )}
             

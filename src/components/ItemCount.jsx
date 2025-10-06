@@ -25,12 +25,14 @@ function Counter({item}) {
                 +
             </Button>
             <Button onClick={handleAddToCart} 
-            style={{backgroundColor: "#00322f", borderColor: "#00322f", marginLeft: "8px",
+            style={{backgroundColor: "#00322f", borderColor: "#00322f", 
+                marginLeft: "8px",
                     fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace",
-                    color: "rgb(234, 234, 181)", fontStyle: "italic",fontSize: "20px", }}> 
+                    color: "rgb(234, 234, 181)", 
+                    fontStyle: "italic",fontSize: "20px", }} > 
                 Agregar al carrito
-            </Button>
+           </Button>
         </div>
     )
 }
-export default Counter;
+export default Counter
