@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { useNavigate } from "react-router"
 
 function CartContainer(params) {
-    const {cart, getTotal, deleteItem}= useContext(CartContext)
+    const {cart, getTotal, deleteItem, clearCart}= useContext(CartContext)
     const total= getTotal()
     const navigate= useNavigate()
 
@@ -27,6 +27,15 @@ function CartContainer(params) {
             style={{ backgroundColor: "#00322f", borderColor: "#00322f", fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace", color: "rgb(234, 234, 181)", fontStyle: "italic",fontSize: "20px", }}
             onClick={() => navigate("/checkout")}> 
                 Comprar
+            </Button>
+              <Button 
+            className="w-50 mt-3" 
+            style={{ backgroundColor: "#00322f", borderColor: "#00322f", fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, monospace", color: "rgb(234, 234, 181)", fontStyle: "italic",fontSize: "20px", }}
+            onClick={() =>{
+                 clearCart (),
+                 navigate("/")}
+                 }> 
+                Vaciar carrito
             </Button>
         </div>
     )
